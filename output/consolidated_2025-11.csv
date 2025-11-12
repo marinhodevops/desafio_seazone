@@ -1,0 +1,31 @@
+property_id,owner_name,city,state,region,status,month,num_reservations,gross_booking_revenue,occupied_days,platform_fee_pct,extra_cost,gross_financial_revenue,net_revenue,gross_revenue,occupancy_pct,margin_pct
+P0001,Owner 1,Rio de Janeiro,BR,Sudeste,active,2025-11,22,11435.5,24,12,1200,11435.5,8863.24,11435.5,80.0,77.51
+P0002,Owner 2,Rio de Janeiro,BR,Sudeste,active,2025-11,17,11951.51,6,12,0,11951.51,10517.33,11951.51,20.0,88.0
+P0003,Owner 3,Fortaleza,BR,Nordeste,active,2025-11,4,13484.77,15,18,0,13484.77,11057.51,13484.77,50.0,82.0
+P0004,Owner 4,Fortaleza,BR,Nordeste,active,2025-11,11,7554.07,4,18,0,7554.07,6194.34,7554.07,13.33,82.0
+P0005,Owner 5,Fortaleza,BR,Nordeste,active,2025-11,17,9740.1,6,18,0,9740.1,7986.88,9740.1,20.0,82.0
+P0006,Owner 6,Rio de Janeiro,BR,Sudeste,active,2025-11,4,10162.21,0,12,0,10162.21,8942.74,10162.21,0.0,88.0
+P0007,Owner 7,Salvador,BR,Nordeste,active,2025-11,10,8064.86,20,18,150,8064.86,6463.19,8064.86,66.67,80.14
+P0008,Owner 8,Rio de Janeiro,BR,Sudeste,active,2025-11,12,9320.97,17,12,0,9320.97,8202.45,9320.97,56.67,88.0
+P0009,Owner 9,Rio de Janeiro,BR,Sudeste,active,2025-11,3,6942.02,22,12,150,6942.02,5958.98,6942.02,73.33,85.84
+P0010,Owner 10,Salvador,BR,Nordeste,active,2025-11,12,13511.37,18,18,0,13511.37,11079.32,13511.37,60.0,82.0
+P0011,Owner 11,Recife,BR,Nordeste,active,2025-11,7,2381.72,6,18,0,2381.72,1953.01,2381.72,20.0,82.0
+P0012,Owner 12,Fortaleza,BR,Nordeste,active,2025-11,24,11893.57,5,18,0,11893.57,9752.73,11893.57,16.67,82.0
+P0013,Owner 13,Rio de Janeiro,BR,Sudeste,active,2025-11,16,4714.0,12,12,0,4714.0,4148.32,4714.0,40.0,88.0
+P0014,Owner 14,Recife,BR,Nordeste,active,2025-11,7,14129.93,1,18,1200,14129.93,10386.54,14129.93,3.33,73.51
+P0015,Owner 15,Fortaleza,BR,Nordeste,active,2025-11,22,13736.38,5,18,0,13736.38,11263.83,13736.38,16.67,82.0
+P0016,Owner 16,São Paulo,BR,Sudeste,active,2025-11,20,12080.61,12,15,150,12080.61,10118.52,12080.61,40.0,83.76
+P0017,Owner 17,Rio de Janeiro,BR,Sudeste,active,2025-11,8,2729.31,0,12,0,2729.31,2401.79,2729.31,0.0,88.0
+P0018,Owner 18,Rio de Janeiro,BR,Sudeste,active,2025-11,4,14505.76,15,12,0,14505.76,12765.07,14505.76,50.0,88.0
+P0019,Owner 19,Recife,BR,Nordeste,active,2025-11,20,6971.85,25,18,0,6971.85,5716.92,6971.85,83.33,82.0
+P0020,Owner 20,São Paulo,BR,Sudeste,active,2025-11,12,9167.72,4,15,0,9167.72,7792.56,9167.72,13.33,85.0
+P0021,Owner 21,Recife,BR,Nordeste,active,2025-11,19,10216.4,3,18,0,10216.4,8377.45,10216.4,10.0,82.0
+P0022,Owner 22,Recife,BR,Nordeste,active,2025-11,0,0.0,25,18,0,0.0,0.0,0.0,83.33,
+P0023,Owner 23,Salvador,BR,Nordeste,active,2025-11,4,1189.2,16,18,0,1189.2,975.14,1189.2,53.33,82.0
+P0024,Owner 24,São Paulo,BR,Sudeste,active,2025-11,14,11735.73,14,15,0,11735.73,9975.37,11735.73,46.67,85.0
+P0025,Owner 25,Rio de Janeiro,BR,Sudeste,active,2025-11,2,9484.15,20,12,0,9484.15,8346.05,9484.15,66.67,88.0
+P0026,Owner 26,Fortaleza,BR,Nordeste,active,2025-11,13,13935.33,15,18,150,13935.33,11276.97,13935.33,50.0,80.92
+P0027,Owner 27,Recife,BR,Nordeste,active,2025-11,12,2457.35,21,18,0,2457.35,2015.03,2457.35,70.0,82.0
+P0028,Owner 28,Rio de Janeiro,BR,Sudeste,active,2025-11,10,2115.2,7,12,0,2115.2,1861.38,2115.2,23.33,88.0
+P0029,Owner 29,Rio de Janeiro,BR,Sudeste,active,2025-11,1,14254.29,17,12,1200,14254.29,11343.78,14254.29,56.67,79.58
+P0030,Owner 30,Fortaleza,BR,Nordeste,active,2025-11,3,7387.61,6,18,150,7387.61,5907.84,7387.61,20.0,79.97

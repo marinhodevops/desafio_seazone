@@ -1,0 +1,150 @@
+{
+  "name": "Fechamento Mensal - Full AI (Local Supabase)",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyMonth",
+              "hour": 2,
+              "minute": 0,
+              "dayOfMonth": 1
+            }
+          ]
+        }
+      },
+      "id": "1",
+      "name": "Trigger Monthly",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 2,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://desafio-tecnico-seazone-tech.vercel.app/bookings-operational",
+        "method": "GET",
+        "options": {}
+      },
+      "id": "2",
+      "name": "Get Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "command": "python3 /home/luizmarinho/desafio_entrega_profissional_final/process_data.py --month {{ $json[\"yearMonth\"] }}"
+      },
+      "id": "3",
+      "name": "Run Script",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 2,
+      "position": [760, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT 1"
+      },
+      "id": "4",
+      "name": "Postgres - Healthcheck",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [1020, 220]
+    },
+    {
+      "parameters": {
+        "resource": "completion",
+        "operation": "create",
+        "model": "gpt-4o-mini",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Gere uma SQL SELECT que retorne imóveis com margem negativa no último mês no Nordeste, usando a view monthly_consolidated. Responda apenas com SQL."
+          }
+        ]
+      },
+      "id": "5",
+      "name": "OpenAI - Generate SQL",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [1020, 380]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json[\"choices\"][0][\"message\"][\"content\"] }}"
+      },
+      "id": "6",
+      "name": "Postgres - Query",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [1280, 380]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.DISCORD_WEBHOOK_URL }}",
+        "method": "POST",
+        "options": {
+          "bodyContentType": "json"
+        },
+        "bodyParameters": {
+          "content": "Fechamento mensal concluído. Resultado da análise AI anexado."
+        }
+      },
+      "id": "7",
+      "name": "Notify Discord",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [1540, 380]
+    }
+  ],
+  "connections": {
+    "Trigger Monthly": {
+      "main": [
+        [
+          { "node": "Get Data", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Get Data": {
+      "main": [
+        [
+          { "node": "Run Script", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Run Script": {
+      "main": [
+        [
+          { "node": "Postgres - Healthcheck", "type": "main", "index": 0 },
+          { "node": "OpenAI - Generate SQL", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "OpenAI - Generate SQL": {
+      "main": [
+        [
+          { "node": "Postgres - Query", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Postgres - Query": {
+      "main": [
+        [
+          { "node": "Notify Discord", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": "wf-full-ai-local",
+  "versionId": "1.0",
+  "meta": {
+    "instanceId": "local-dev",
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}
